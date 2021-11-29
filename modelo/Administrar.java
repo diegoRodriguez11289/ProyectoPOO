@@ -5,10 +5,7 @@ public class Administrar{
   public static ArrayList<DueñoDeMascota> dueños;
   public static ArrayList<Mascota> mascotas;
 
-  public void agregarMascota(Mascota m){
-    mascotas.add(m);
-    
-  }
+  
 
 
 }
