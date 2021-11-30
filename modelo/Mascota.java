@@ -1,21 +1,57 @@
 package modelo;
-import java.util.ArrayList;
 public class Mascota{
-  private String nombre;
-  private TipoAnimal tipo;
-  private String raza;
-  private String foto;
-  private String nacimiento;
-  
-  public Mascota(String n, TipoAnimal t, String r, String na){
-    nombre=n;
-    tipo=t;
-    raza=r;
-    nacimiento=na;
-  }
+    private String nombre;
+    private TipoAnimal tipo;
+    private String raza;
+    private String foto;
+    private String nacimiento;
+    private String codigo;
 
-   public void setNombre(String n) {
-       nombre = n;
+    public Mascota(String n, TipoAnimal t, String r, String na) {
+        nombre = n;
+        tipo = t;
+        raza = r;
+        nacimiento = na;    }
+
+    public Mascota(String n, TipoAnimal t, String r, String na, String cod) {
+        nombre = n;
+        tipo = t;
+        raza = r;
+        nacimiento = na;
+        codigo = cod;
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public TipoAnimal getTipo() {
+        return tipo;
+    }
+
+    public String getRaza() {
+        return raza;
+    }
+
+    public String getFoto() {
+        return foto;
+    }
+
+    public String getNacimiento() {
+        return nacimiento;
+    }
+
+    public void setNombre(String n) {
+        nombre = n;
     }
 
     public void setTipo(TipoAnimal t) {
@@ -34,19 +70,10 @@ public class Mascota{
         nacimiento = na;
     }
 
-    public void generarCodigo(String n, TipoAnimal t, String r, String na) {
-      String n1=n.substring(0,2);
-      String r1=r.substring(0,2);
-      System.out.print(n1+t+r1+na);
+    public String generarCodigo(String n, TipoAnimal t, String r, String na) {
+        String n1 = n.substring(0, 2);
+        String r1 = r.substring(0, 2);
+        codigo=n1 + t + r1 + na;
+        return codigo;
     }
-
-    
-
-    
-
-
-
-    
-  
 }
-  
