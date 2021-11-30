@@ -6,6 +6,8 @@ class Main extends Administrar {
   public static void main  (String[] args){
 
     crearListaDueños();
+    crearMascotas();
+
 
     String cedula;
 
@@ -252,13 +254,11 @@ class Main extends Administrar {
        case 3:
        //administrar mascotas
        while(!salir4){
+         mostrarMascotas();
          System.out.println(MenuMascotas);
          opcion4=sc.nextInt();
-         mascotas= new ArrayList<>();
-         eliminadas= new ArrayList<>();
          switch(opcion4){
            case 1:
-              Administrar.crearMascotas();
               System.out.println("Crear Mascota");
               System.out.println("Escriba el nombre de su mascota: ");
               String nombre=sn.nextLine();
@@ -271,10 +271,22 @@ class Main extends Administrar {
               String nacimiento=sn.nextLine();
               Mascota m=new Mascota(nombre, tipoA, raza, nacimiento);
               String code= m.generarCodigo(nombre, tipoA, raza, nacimiento); 
-              m=new Mascota(nombre, tipoA, raza, nacimiento, code);                      
-              mascotas.add(m);
-              System.out.println("Registrado, su código es ");
-              System.out.println(m.getCodigo());
+              m=new Mascota(nombre, tipoA, raza, nacimiento, code);
+              if(eliminadas.contains(m)){
+                System.out.println("No se puede volver a registrar");
+              }
+
+              else {
+                mascotas.add(m);
+                System.out.println("Registrado, su código es ");
+                System.out.println(m.getCodigo());
+
+              }  
+
+            
+
+           
+
                          
               break;
 
