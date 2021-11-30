@@ -1,4 +1,6 @@
 import modelo.*;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 class Main extends Administrar {
   public static void main  (String[] args){
@@ -252,8 +254,11 @@ class Main extends Administrar {
        while(!salir4){
          System.out.println(MenuMascotas);
          opcion4=sc.nextInt();
+         mascotas= new ArrayList<>();
+         eliminadas= new ArrayList<>();
          switch(opcion4){
            case 1:
+              Administrar.crearMascotas();
               System.out.println("Crear Mascota");
               System.out.println("Escriba el nombre de su mascota: ");
               String nombre=sn.nextLine();
@@ -265,9 +270,12 @@ class Main extends Administrar {
               System.out.println("Escriba el año de nacimiento: ");
               String nacimiento=sn.nextLine();
               Mascota m=new Mascota(nombre, tipoA, raza, nacimiento);
-              String code=m.generarCodigo(nombre, tipoA, raza, nacimiento);
-              System.out.println("Su código es ");
+              String code= m.generarCodigo(nombre, tipoA, raza, nacimiento); 
+              m=new Mascota(nombre, tipoA, raza, nacimiento, code);                      
+              mascotas.add(m);
+              System.out.println("Registrado, su código es ");
               System.out.println(m.getCodigo());
+                         
               break;
 
            case 2:
@@ -280,7 +288,7 @@ class Main extends Administrar {
                     mascotas.remove(i);
                 }
                 else{
-                  System.out.print("Código no existente");
+                  System.out.println("Código no existente");
                 }
               }
               break;
