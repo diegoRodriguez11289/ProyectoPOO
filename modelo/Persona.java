@@ -15,6 +15,36 @@ public  class Persona{
     email=e;
   }
 
+  public Ciudad getCiudad(){
+    return ciudad;
+  }
+
+  public void  setNombre(String nom){
+    nombre=nom;
+    
+  }
+
+  public void setDireccion(String dir){
+    direccion=dir;
+
+  }
+
+  public void setTelefono(String tel){
+    telefono=tel;
+  }
+
+  public void setEmail(String em){
+    email=em;
+  }
+
+  public void setCiudad(Ciudad ciu){
+    ciudad=ciu;
+  }
+
+  public String toString(){
+    return "nombres: "+nombre+", Direccion:"+direccion+", telefono: "+telefono+ciudad.toString()+", email: "+email;
+  }
+
   
 
 

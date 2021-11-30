@@ -6,7 +6,29 @@ public class Auspiciante extends Persona{
   public Auspiciante(String n,String d,String t, Ciudad c,String e, String w){
     super(n,d,t,c,e);
     webpage=w;
+
   }
+
+  public String getWebpage{
+    return webpage;
+
+  }
+
+  public String getCodigo{
+    return codigo;
+  }
+
+  public void setWebpage(String webp){
+    webpage=webp;
+
+  }
+
+  public String toString(){
+    return super.toString()+" webpage:"+webpage;
+  }
+
+
+
 
 
 }

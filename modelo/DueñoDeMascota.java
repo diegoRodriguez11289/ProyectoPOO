@@ -8,4 +8,27 @@ public class DueñoDeMascota extends Persona{
     apellidos=a;
     this.ci=ci;
   }
+
+  public String getNombresApellidos(){
+    return nombre +" "+ apellidos;
+  }
+
+  public String getCI(){
+    return ci;
+  }
+  
+  
+
+  public void setApellidos(String ap){
+    apellidos=ap;
+
+  }
+
+  public String toString(){
+    return super.toString()+", apellidos: "+apellidos+", cedula: "+ ci;
+
+  }
+
+  
+
 }
