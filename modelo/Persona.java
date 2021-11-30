@@ -7,6 +7,8 @@ public  class Persona{
   public Ciudad ciudad;
   public String email;
 
+ public Persona(){}
+
   public Persona(String n,String d,String t, Ciudad c,String e){
     nombre=n;
     direccion=d;

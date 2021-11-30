@@ -1,4 +1,5 @@
 package modelo;
+import java.util.ArrayList;
 public class Concurso{
   private String nombre;
   private String fecha;
@@ -7,11 +8,23 @@ public class Concurso{
   private String fechaCierre;
   private Ciudad ciudad;
   private String lugar;
-  private Premio premios[];
+  private ArrayList<Premio> premios;
   private Auspiciante auspiciante;
   private DirigidoAnimal dirigidoA;
 
- public Concurso(String nombre, String fecha, String hora, String fechaInicio, String fechaCierre, Ciudad ciudad, String lugar, Premio[] premios, Auspiciante auspiciante, DirigidoAnimal dirigidoA) {
+ public Concurso(String nombre, String fecha, String hora, String fechaInicio, String fechaCierre, Ciudad ciudad, String lugar, ArrayList<Premio> premios, DirigidoAnimal dirigidoA) {
+        this.nombre = nombre;
+        this.fecha = fecha;
+        this.hora = hora;
+        this.fechaInicio = fechaInicio;
+        this.fechaCierre = fechaCierre;
+        this.ciudad = ciudad;
+        this.lugar = lugar;
+        this.premios = premios;
+        this.dirigidoA = dirigidoA;
+  }
+
+ public Concurso(String nombre, String fecha, String hora, String fechaInicio, String fechaCierre, Ciudad ciudad, String lugar, ArrayList<Premio> premios, Auspiciante auspiciante, DirigidoAnimal dirigidoA) {
         this.nombre = nombre;
         this.fecha = fecha;
         this.hora = hora;
@@ -72,13 +85,6 @@ public class Concurso{
         this.lugar = lugar;
     }
 
-    public Premio[] getPremios() {
-        return premios;
-    }
-
-    public void setPremios(Premio[] premios) {
-        this.premios = premios;
-    }
 
     public Auspiciante getAuspiciante() {
         return auspiciante;
@@ -94,5 +100,5 @@ public class Concurso{
 
     public void setDirigidoA(DirigidoAnimal dirigidoA) {
         this.dirigidoA = dirigidoA;
-    }
+}
 }

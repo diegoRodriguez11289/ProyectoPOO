@@ -3,18 +3,22 @@ public class Auspiciante extends Persona{
   private String webpage;
   private String codigo;
 
-  public Auspiciante(String n,String d,String t, Ciudad c,String e, String w){
+  public Auspiciante(){
+    super();
+  }
+ 
+
+  public Auspiciante(String n,String d,String t, Ciudad c,String e, String w, String cod){
     super(n,d,t,c,e);
     webpage=w;
-
+    codigo=cod;
   }
-
-  public String getWebpage{
+  public String getWebpage(){
     return webpage;
 
   }
 
-  public String getCodigo{
+  public String getCodigo(){
     return codigo;
   }
 
@@ -26,9 +30,6 @@ public class Auspiciante extends Persona{
   public String toString(){
     return super.toString()+" webpage:"+webpage;
   }
-
-
-
 
 
 }
