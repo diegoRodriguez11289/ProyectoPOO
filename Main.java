@@ -255,10 +255,34 @@ class Main extends Administrar {
          switch(opcion4){
            case 1:
               System.out.println("Crear Mascota");
-             
+              System.out.println("Escriba el nombre de su mascota: ");
+              String nombre=sn.nextLine();
+              System.out.println("Escriba si es PERRO o GATO: ");
+              String tipo=sn.nextLine();
+              TipoAnimal tipoA = TipoAnimal.valueOf(tipo.toUpperCase());
+              System.out.println("Escriba la raza: ");
+              String raza=sn.nextLine();
+              System.out.println("Escriba el año de nacimiento: ");
+              String nacimiento=sn.nextLine();
+              Mascota m=new Mascota(nombre, tipoA, raza, nacimiento);
+              String code=m.generarCodigo(nombre, tipoA, raza, nacimiento);
+              System.out.println("Su código es ");
+              System.out.println(m.getCodigo());
               break;
+
            case 2:
               System.out.println("Eliminar Mascota");
+              System.out.println("Ingresar código ID: ");
+              String id=sn.nextLine();
+              for (int i = 0; i<mascotas.size(); i++) {
+                if(mascotas.get(i).getCodigo().equals(id)){
+                    eliminadas.add(mascotas.get(i));
+                    mascotas.remove(i);
+                }
+                else{
+                  System.out.print("Código no existente");
+                }
+              }
               break;
            case 3:
                salir4=true;
