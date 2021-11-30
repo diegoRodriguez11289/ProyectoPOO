@@ -50,7 +50,8 @@ class Main extends Administrar {
     String nprovincia;
     String nemail;
     
-    
+     DirigidoAnimal dirigidoAb;
+     Auspiciante auspiciante;
 
 
     String mainMenu = ("escoge una opcion del  menú: \n" 
@@ -95,7 +96,7 @@ class Main extends Administrar {
      switch(opcion){
        
        case 1:
-      
+ 
       
        while(!salir2){
          //administrar concursos
@@ -103,7 +104,90 @@ class Main extends Administrar {
           opcion2=sc.nextInt();
           switch(opcion2){
             case 1:
-               System.out.println("crear concurso");
+              Scanner sca=new Scanner(System.in);
+               System.out.println("Crear concurso");
+               System.out.println("Ingresar nombre para concurso");
+               String nombreC=sca.nextLine();
+               System.out.println("Ingresar fecha del evento");
+               String fechaE=sca.nextLine();
+               System.out.println("Ingresar hora del evento");
+               String horaE=sca.nextLine();
+               System.out.println("Ingresar fecha de inicio de inscripcion");
+               String fechaII=sca.nextLine();
+               System.out.println("Ingresar fecha de cierre de inscripcion");
+               String fechaCI=sca.nextLine();
+               System.out.println("Ingresar ciudad del evento");
+               String ciudadE=sca.nextLine();
+               System.out.println("Ingresar provincia del evento");
+               String provinciaE=sca.nextLine();
+               Ciudad coE=new Ciudad(ciudadE,provinciaE);
+               System.out.println("Ingresar lugar del evento");
+               String lugarE=sca.nextLine();
+               System.out.println("Ingresar premios del evento");
+               System.out.println("Los premios tienen auspiciante?");
+              //Variable para indicar si el premio tiene auspiciantes y arraylist para guardar los premios
+              ArrayList<Premio> premios=new ArrayList<>();
+              if (sc.nextBoolean()){
+                  System.out.println("Describa los premios para el primer lugar");
+                  String premio1=sca.nextLine();
+                  Premio p1=new Premio("Primer Lugar",premio1);
+                  premios.add(p1);
+                  System.out.println("Describa los premios para el segundo lugar");
+                  String premio2=sca.nextLine();
+                  Premio p2=new Premio("Segundo Lugar",premio2);
+                  premios.add(p2);
+                  System.out.println("Describa los premios para el tercer lugar");
+                  String premio3=sca.nextLine();
+                  Premio p3=new Premio("Tercer Lugar",premio3);
+                  premios.add(p3);
+                  System.out.println("Nombre del auspiciante:");
+                  String nAsp=sca.nextLine();
+                  System.out.println("Direccion del auspiciante:");
+                  String dAsp=sca.nextLine();
+                  System.out.println("Telefono del auspiciante:");
+                  String tAsp=sca.nextLine();
+                  System.out.println("Ciudad del auspiciante:");
+                  String cAsp=sca.nextLine();
+                  System.out.println("Provincia del auspiciante:");
+                  String pAsp=sca.nextLine();
+                  System.out.println("Email del auspiciante:");
+                  String eAsp=sca.nextLine();
+                  System.out.println("WebPage del auspiciante:");
+                  String wAsp=sca.nextLine();
+                  System.out.println("Codigo del auspiciante:");
+                  String codAsp=sca.nextLine();
+                  Ciudad ocAsp=new Ciudad(cAsp,pAsp);
+                  auspiciante=new Auspiciante(nAsp,dAsp,tAsp,ocAsp,eAsp,wAsp,codAsp);
+              System.out.println("Ingresar a que tipo de animal va dirigido");
+               String dAnimal=sc.nextLine();
+               DirigidoAnimal dirigidoAB= DirigidoAnimal.valueOf(dAnimal.toUpperCase());
+               Concurso concurso=new Concurso(nombreC,fechaE,horaE,fechaII,fechaCI,coE,lugarE,premios,auspiciante,dirigidoAB);
+
+               }
+               else{
+                 System.out.println("Describa los premios para el primer lugar");
+                  String premio1=sca.nextLine();
+                  Premio p1=new Premio("Primer Lugar",premio1);
+                  premios.add(p1);
+                  System.out.println("Describa los premios para el segundo lugar");
+                  String premio2=sca.nextLine();
+                  Premio p2=new Premio("Segundo Lugar",premio2);
+                  premios.add(p2);
+                  System.out.println("Describa los premios para el tercer lugar");
+                  String premio3=sca.nextLine();
+                  Premio p3=new Premio("Tercer Lugar",premio3);
+                  premios.add(p3);
+                   System.out.println("Ingresar a que tipo de animal va dirigido");
+               String dAnimal=sc.nextLine();
+               DirigidoAnimal dirigidoAB= DirigidoAnimal.valueOf(dAnimal.toUpperCase());
+               Concurso concurso=new Concurso(nombreC,fechaE,horaE,fechaII,fechaCI,coE,lugarE,premios,dirigidoAB);
+               }
+                
+              
+      
+               
+  //aqui lo tienes que copiar
+
               break;
             case 2:
                System.out.println("inscribir");
