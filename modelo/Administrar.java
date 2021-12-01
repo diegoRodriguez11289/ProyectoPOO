@@ -105,7 +105,6 @@ public static void crearConcurso(){
      Ciudad Guayaquil= new Ciudad("Guayaquil","Guayas");
      Ciudad Cuenca= new Ciudad("Cuenca","Azogues");
      Ciudad Quito= new Ciudad("Quito","Pichincha");
-     dueños= new ArrayList<>();
      mascotas= new ArrayList<>();
      eliminadas= new ArrayList<>();
     DueñoDeMascota dueño1=new DueñoDeMascota("Diego Adriel","Los olivos","0994047722",Guayaquil,"diadrodr@espol.edu.ec","Rodriguez Flores","0924781081");
