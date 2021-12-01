@@ -6,6 +6,7 @@ public class Mascota{
     private String foto;
     private String nacimiento;
     private String codigo;
+    private DueñoDeMascota dueno;
 
     public Mascota(String n, TipoAnimal t, String r, String na) {
         nombre = n;
@@ -13,10 +14,11 @@ public class Mascota{
         raza = r;
         nacimiento = na;    }
 
-    public Mascota(String n, TipoAnimal t, String r, String na, String cod) {
+    public Mascota(String n, TipoAnimal t, String r, String na, DueñoDeMascota d, String cod) {
         nombre = n;
         tipo = t;
         raza = r;
+        dueno = d;
         nacimiento = na;
         codigo = cod;
     }
@@ -69,6 +71,15 @@ public class Mascota{
     public void setNacimiento(String na) {
         nacimiento = na;
     }
+
+    public DueñoDeMascota getDueno() {
+        return dueno;
+    }
+
+    public void setDueno(DueñoDeMascota d) {
+        dueno = d;
+    }
+
 
     public String generarCodigo(String n, TipoAnimal t, String r, String na) {
         String n1 = n.substring(0, 2);

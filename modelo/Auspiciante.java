@@ -8,10 +8,10 @@ public class Auspiciante extends Persona{
   }
  
 
-  public Auspiciante(String n,String d,String t, Ciudad c,String e, String w, String cod){
+  public Auspiciante(String n,String d,String t, Ciudad c,String e, String w){
     super(n,d,t,c,e);
     webpage=w;
-    codigo=cod;
+    
   }
   public String getWebpage(){
     return webpage;

@@ -11,8 +11,10 @@ public class Concurso{
   private ArrayList<Premio> premios;
   private Auspiciante auspiciante;
   private DirigidoAnimal dirigidoA;
+  private String codigo;
+  private ArrayList<Mascota> mascotasC;
 
- public Concurso(String nombre, String fecha, String hora, String fechaInicio, String fechaCierre, Ciudad ciudad, String lugar, ArrayList<Premio> premios, DirigidoAnimal dirigidoA) {
+public Concurso(String nombre, String fecha, String hora, String fechaInicio, String fechaCierre, Ciudad ciudad, String lugar, ArrayList<Premio> premios, DirigidoAnimal dirigidoA) {
         this.nombre = nombre;
         this.fecha = fecha;
         this.hora = hora;
@@ -24,7 +26,21 @@ public class Concurso{
         this.dirigidoA = dirigidoA;
   }
 
- public Concurso(String nombre, String fecha, String hora, String fechaInicio, String fechaCierre, Ciudad ciudad, String lugar, ArrayList<Premio> premios, Auspiciante auspiciante, DirigidoAnimal dirigidoA) {
+ public Concurso(String nombre, String fecha, String hora, String fechaInicio, String fechaCierre, Ciudad ciudad, String lugar, ArrayList<Premio> premios, DirigidoAnimal dirigidoA,String codigo) {
+        this.nombre = nombre;
+        this.fecha = fecha;
+        this.hora = hora;
+        this.fechaInicio = fechaInicio;
+        this.fechaCierre = fechaCierre;
+        this.ciudad = ciudad;
+        this.lugar = lugar;
+        this.premios = premios;
+        this.dirigidoA = dirigidoA;
+        this.codigo=codigo;
+        mascotasC=new ArrayList<>();
+  }
+
+public Concurso(String nombre, String fecha, String hora, String fechaInicio, String fechaCierre, Ciudad ciudad, String lugar, ArrayList<Premio> premios, Auspiciante auspiciante, DirigidoAnimal dirigidoA) {
         this.nombre = nombre;
         this.fecha = fecha;
         this.hora = hora;
@@ -35,7 +51,30 @@ public class Concurso{
         this.premios = premios;
         this.auspiciante = auspiciante;
         this.dirigidoA = dirigidoA;
-  }
+        }
+
+ public Concurso(String nombre, String fecha, String hora, String fechaInicio, String fechaCierre, Ciudad ciudad, String lugar, ArrayList<Premio> premios, Auspiciante auspiciante, DirigidoAnimal dirigidoA,String codigo) {
+        this.nombre = nombre;
+        this.fecha = fecha;
+        this.hora = hora;
+        this.fechaInicio = fechaInicio;
+        this.fechaCierre = fechaCierre;
+        this.ciudad = ciudad;
+        this.lugar = lugar;
+        this.premios = premios;
+        this.auspiciante = auspiciante;
+        this.dirigidoA = dirigidoA;
+        this.codigo=codigo;
+        mascotasC=new ArrayList<>();
+        }
+
+    public String getNombre() {
+            return nombre;
+        }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
    public String getFecha() {
         return fecha;
@@ -101,4 +140,19 @@ public class Concurso{
     public void setDirigidoA(DirigidoAnimal dirigidoA) {
         this.dirigidoA = dirigidoA;
 }
+
+    //El metodo generarCodc usa el metodo substring para tomar una subcadena de las distintas variables de la clase Concurso y generar un codigo
+    public String generarCodC(String nombre, String fecha, String hora, String fechaInicio, String fechaCierre, Ciudad ciudad, String lugar, ArrayList<Premio> premios){
+        String codigo=nombre.substring(0,1)+fecha.charAt(0)+hora.substring(0,1)+fechaInicio.substring(0,1)+fechaCierre.substring(0,1)+ciudad.getNomCiudad().substring(0,1)+premios.get(0).getLugarPremio().substring(0,1)+nombre.substring(0,1)+lugar.substring(0,1)+lugar.substring(0,1);
+        return codigo;
+    }
+
+    public String getCodigoC(){
+      return codigo;
+    }
+
+    public ArrayList<Mascota> getMascotaC() {
+        return mascotasC;
+    }
+
 }
